@@ -19,11 +19,14 @@ except:
 # Config
 # URL = "https://github.com/cztomczak/cefpython"
 URL = ""
-URLs = []
+URLs = None
 VIEWPORT_SIZE = (1024, 5000)
 # SCREENSHOT_BASE_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)),
 #                                "screenshot.png")
-EXPORT_BASE_PATH = os.path.abspath(os.path.dirname(__file__))
+EXPORT_BASE_PATH = os.path.join(os.path.abspath(os.path.dirname(__file__)), "export/")
+EXPORT_SCREENSHOT_PATH = ""
+EXPORT_HTML_PATH = ""
+EXPORT_PDF_PATH = ""
 EXPORT_PDF = True
 EXPORT_HTML = True
 EXPORT_SCREENSHOT = True
@@ -35,13 +38,13 @@ def main():
 
     urlFileLink = sys.argv[1]
 
-    with open(urlFileLink, "r") as file:
+    # with open(urlFileLink, "r") as file:
 
-    	URLs = file.readlines()
+	URLs = pandas.read_csv(urlFileLink, None, names = ["name", "url"])
 
-    for url in URLs:
+    for id, row in URLs:
 
-    	URL = url
+    	URL = row["url"]
 
 	    sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
 	    cef.Initialize(settings={"windowless_rendering_enabled": True})
@@ -56,6 +59,8 @@ def main():
 	    browser.SetClientHandler(LoadHandler())
 
 	    cef.MessageLoop()
+
+    exit_app()
 
 
 
@@ -154,7 +159,14 @@ class LoadHandler(object):
 
     	if frame.IsMain():
     		self.stringVisitor = StringVisitor()
-	    	frame.GetSource(self.stringVisitor)
+            if EXPORT_HTML:
+    	    	frame.GetSource(self.stringVisitor)
+
+            if EXPORT_PDF:
+                frame.GetSource(self.stringVisitor)
+
+            if EXPORT_SCREENSHOT:
+                save_screenshot()
 	    	# browser.Print()
 	    	# frame.GetText(self.stringVisitor)
 	    	# print(SV.value)
