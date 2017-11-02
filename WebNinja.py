@@ -52,6 +52,8 @@ EXPORT_PDF = True
 EXPORT_HTML = True
 EXPORT_SCREENSHOT = True
 
+MODE = "TEST"
+
 
 def main():
 
@@ -75,6 +77,10 @@ def main():
     else:
 
         argvId = 1
+
+        if (sys.argv[argvId] == "-test"):
+
+            startTestBrowsing()
 
         while argvId < len(sys.argv):
 
@@ -187,6 +193,39 @@ def check_versions():
     print("[WebNinja] Python {ver} {arch}".format(
           ver=platform.python_version(), arch=platform.architecture()[0]))
     assert cef.__version__ >= "55.3", "CEF Python v55.3+ required to run this"
+
+
+def startTestBrowsing():
+
+    sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
+    cef.Initialize(settings={"windowless_rendering_enabled": True})
+
+    # parentWindowHandle = 0
+
+    windowInfo = cef.WindowInfo()
+    # windowInfo.SetAsOffscreen(parentWindowHandle)
+
+    browser = cef.CreateBrowserSync(
+        window_info = windowInfo,
+        url = "http://www.qichacha.com"
+        )
+
+    browser.SetClientHandler(LoadHandler())
+    browser.SetClientHandler(RenderHandler())
+
+    browser.SendFocusEvent(True)
+    # You must call WasResized at least once to let know CEF that
+    # viewport size is available and that OnPaint may be called.
+    browser.WasResized()
+
+    cef.MessageLoop()
+
+def testBrowseNext(browser, link):
+
+    global MODE
+
+    MODE = "TEST2"
+    browser.LoadUrl(link)
 
 def startBrowsing():
 
@@ -329,17 +368,31 @@ class LoadHandler(object):
 
         if frame.IsMain():
 
-            print("[WebNinja] Message: has loaded the website successfully...")
-
+            global MODE
             global EXPORT_NAME
             self.stringVisitor = StringVisitor()
-            self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH +  URLs.iloc[CURRENT_ID]["name"]
+            # self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"]
 
-            if EXPORT_HTML or EXPORT_PDF:
+
+            if MODE == "TEST":
+
+                testBrowseNext(browser, "http://www.qichacha.com/firm_CN_f470d4e4d2bf1fc59650255443707461.html")
+                return
+
+            elif MODE == "TEST2":
+
+                self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + "target"
                 frame.GetSource(self.stringVisitor)
+                return
 
-            if EXPORT_SCREENSHOT:
-                save_screenshot(browser)
+
+            # print("[WebNinja] Message: has loaded the website successfully...")
+
+            # if EXPORT_HTML or EXPORT_PDF:
+            #     frame.GetSource(self.stringVisitor)
+
+            # if EXPORT_SCREENSHOT:
+            #     save_screenshot(browser)
             # browser.Print()
             # frame.GetText(self.stringVisitor)
             # print(SV.value)
