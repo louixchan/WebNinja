@@ -80,51 +80,74 @@ def main():
 
         if (sys.argv[argvId] == "-test"):
 
-            startTestBrowsing()
+            sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
+            cef.Initialize(settings={"windowless_rendering_enabled": True})
 
-        while argvId < len(sys.argv):
+            # parentWindowHandle = 0
 
-            if sys.argv[argvId] == "-s":
+            windowInfo = cef.WindowInfo()
+            # windowInfo.SetAsOffscreen(parentWindowHandle)
 
-                URLs = pandas.DataFrame([{"name" : "target", "url" : sys.argv[argvId + 1]}])
+            browser = cef.CreateBrowserSync(
+                window_info=windowInfo,
+                url="www.google.com"
+            )
 
-            elif sys.argv[argvId] == "-m":
+            # browser.SetClientHandler(LoadHandler())
+            # browser.SetClientHandler(RenderHandler())
 
-                try:
-                    URLs = pandas.read_csv(sys.argv[argvId + 1], None, names = ["name", "url"])
-                except:
-                    print("[WebNinja] Error: Invalid file path. Please put the file in the same directory as WebNinja"
-                        "To see other options, type: python3 WebNinja.py -man")
+            browser.SendFocusEvent(True)
+            # You must call WasResized at least once to let know CEF that
+            # viewport size is available and that OnPaint may be called.
+            browser.WasResized()
 
-            elif sys.argv[argvId] == "-e":
+            cef.MessageLoop()
 
-                EXPORT_BASE_PATH = sys.argv[argvId + 1]
+        else:
 
-            elif sys.argv[argvId] == "-html":
+            while argvId < len(sys.argv):
 
-                EXPORT_HTML = sys.argv[argvId + 1] == T
+                if sys.argv[argvId] == "-s":
 
-            elif sys.argv[argvId] == "-pdf":
+                    URLs = pandas.DataFrame([{"name" : "target", "url" : sys.argv[argvId + 1]}])
 
-                EXPORT_PDF = sys.argv[argvId + 1] == T
+                elif sys.argv[argvId] == "-m":
 
-            elif sys.argv[argvId] == "-ss":
+                    try:
+                        URLs = pandas.read_csv(sys.argv[argvId + 1], None, names = ["name", "url"])
+                    except:
+                        print("[WebNinja] Error: Invalid file path. Please put the file in the same directory as WebNinja"
+                            "To see other options, type: python3 WebNinja.py -man")
 
-                EXPORT_SCREENSHOT = sys.argv[argvId + 1] == T
+                elif sys.argv[argvId] == "-e":
 
-            else:
+                    EXPORT_BASE_PATH = sys.argv[argvId + 1]
 
-                print("[WebNinja] Error: Option %s not recognised. To see all options, "
-                    "type: python3 WebNinja.py -man" % sys.argv[argvId])
+                elif sys.argv[argvId] == "-html":
+
+                    EXPORT_HTML = sys.argv[argvId + 1] == T
+
+                elif sys.argv[argvId] == "-pdf":
+
+                    EXPORT_PDF = sys.argv[argvId + 1] == T
+
+                elif sys.argv[argvId] == "-ss":
+
+                    EXPORT_SCREENSHOT = sys.argv[argvId + 1] == T
+
+                else:
+
+                    print("[WebNinja] Error: Option %s not recognised. To see all options, "
+                        "type: python3 WebNinja.py -man" % sys.argv[argvId])
+                    sys.exit(1)
+
+                argvId = argvId + 2
+
+            if (argvId != len(sys.argv)):
+
+                print("[WebNinja] Error: Option %s has a missing specifier. To see all option, "
+                    "type: python3 WebNinja.py -man" % sys.argv[argvId - 2])
                 sys.exit(1)
-
-            argvId = argvId + 2
-
-        if (argvId != len(sys.argv)):
-
-            print("[WebNinja] Error: Option %s has a missing specifier. To see all option, "
-                "type: python3 WebNinja.py -man" % sys.argv[argvId - 2])
-            sys.exit(1)
 
     if not os.path.exists(EXPORT_BASE_PATH):
         os.makedirs(EXPORT_BASE_PATH)
@@ -150,6 +173,39 @@ def main():
        #  cef.MessageLoop()
 
     # exit_app()
+
+def checkDependencies():
+
+    try:
+        __import__("cefpython3")
+    except ImportError:
+        print("[WebNinja] Error: WebNinja needs CEFPYTHON module for web scraping. "
+              " To install type: pip install cefpython3")
+        sys.exit(1)
+
+    try:
+        __import__("pandas")
+    except ImportError:
+        print("[WebNinja] Error: WebNinja needs PANDAS module for reading your URL csv files. "
+              " To install type: pip install pandas")
+        sys.exit(1)
+
+    try:
+        __import__("PIL")
+    except ImportError:
+        print("[WebNinja] Error: WebNinja needs PILLOW module for exporting screenshots. "
+              "To install type: pip install Pillow")
+        sys.exit(1)
+
+    try:
+        __import__("weasyprint")
+    except ImportError:
+        print("[WebNinja] Error: WebNinja needs WEASYPRINT module for exporting PDFs. "
+              "To install type: pip install weasyprint")
+        sys.exit(1)
+
+    print("All dependencies satisfied...")
+
 
 def manual():
 
@@ -207,11 +263,11 @@ def startTestBrowsing():
 
     browser = cef.CreateBrowserSync(
         window_info = windowInfo,
-        url = "http://www.qichacha.com"
+        url = "www.google.com"
         )
 
-    browser.SetClientHandler(LoadHandler())
-    browser.SetClientHandler(RenderHandler())
+    # browser.SetClientHandler(LoadHandler())
+    # browser.SetClientHandler(RenderHandler())
 
     browser.SendFocusEvent(True)
     # You must call WasResized at least once to let know CEF that
@@ -223,7 +279,7 @@ def startTestBrowsing():
 def testBrowseNext(browser, link):
 
     global MODE
-
+    # input("Press Enter to continue...")
     MODE = "TEST2"
     browser.LoadUrl(link)
 
@@ -374,16 +430,19 @@ class LoadHandler(object):
             # self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"]
 
 
-            if MODE == "TEST":
-
-                testBrowseNext(browser, "http://www.qichacha.com/firm_CN_f470d4e4d2bf1fc59650255443707461.html")
-                return
-
-            elif MODE == "TEST2":
-
-                self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + "target"
-                frame.GetSource(self.stringVisitor)
-                return
+            # if MODE == "TEST":
+            #     MODE = "TEST3"
+            #     return
+            #
+            # elif MODE == "TEST2":
+            #
+            #     self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + "target"
+            #     frame.GetSource(self.stringVisitor)
+            #     return
+            #
+            # elif MODE == "TEST3":
+            #     testBrowseNext(browser, "http://www.qichacha.com/firm_CN_f470d4e4d2bf1fc59650255443707461.html")
+            #     return
 
 
             # print("[WebNinja] Message: has loaded the website successfully...")
@@ -397,7 +456,7 @@ class LoadHandler(object):
             # frame.GetText(self.stringVisitor)
             # print(SV.value)
 
-            browseNext(browser)
+            # browseNext(browser)
 
     def OnLoadError(self, browser, frame, error_code, failed_url, **_):
         """Called when the resource load for a navigation fails

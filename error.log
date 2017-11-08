@@ -368,3 +368,45 @@ AttributeError: 'cefpython_py36.PyBrowser' object has no attribute 'Destroy'
     self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"]
 AttributeError: 'NoneType' object has no attribute 'iloc'
 
+
+[2017-11-08 01:25:30] Traceback (most recent call last):
+  File "/Users/apple/Documents/WebNinja/WebNinjaBrowser.py", line 94, in launchLoginPage
+    browser.SetClientHandler(LoadHandler())
+NameError: name 'LoadHandler' is not defined
+
+
+[2017-11-08 01:26:12] Traceback (most recent call last):
+  File "/Users/apple/Documents/WebNinja/WebNinjaBrowser.py", line 94, in launchLoginPage
+    browser.SetClientHandler(WebNinja.LoadHandler())
+NameError: name 'WebNinja' is not defined
+
+
+[2017-11-08 01:38:29] Traceback (most recent call last):
+  File "webNinja.py", line 518, in <module>
+    main()
+  File "webNinja.py", line 134, in main
+    startBrowsing()
+  File "webNinja.py", line 272, in startBrowsing
+    URL = URLs.iloc[CURRENT_ID]["url"]
+AttributeError: 'NoneType' object has no attribute 'iloc'
+
+
+[2017-11-08 01:39:17] Traceback (most recent call last):
+  File "webNinja.py", line 518, in <module>
+    main()
+  File "webNinja.py", line 134, in main
+    startBrowsing()
+  File "webNinja.py", line 272, in startBrowsing
+    URL = URLs.iloc[CURRENT_ID]["url"]
+AttributeError: 'NoneType' object has no attribute 'iloc'
+
+
+[2017-11-08 01:40:12] Traceback (most recent call last):
+  File "webNinja.py", line 518, in <module>
+    main()
+  File "webNinja.py", line 134, in main
+    startBrowsing()
+  File "webNinja.py", line 272, in startBrowsing
+    URL = URLs.iloc[CURRENT_ID]["url"]
+AttributeError: 'NoneType' object has no attribute 'iloc'
+
