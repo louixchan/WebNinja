@@ -40,7 +40,7 @@
      <string>Login Done</string>
     </property>
    </widget>
-   <widget class="QTableView" name="tableView">
+   <widget class="QTableView" name="tbvLinkOptionTable">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -50,6 +50,29 @@
      </rect>
     </property>
    </widget>
+   <widget class="QTextEdit" name="txtLinkCsvAddress">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>210</y>
+      <width>104</width>
+      <height>31</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnUploadLinkCsv">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>260</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -57,7 +80,7 @@
      <x>0</x>
      <y>0</y>
      <width>526</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
@@ -65,22 +88,6 @@
  </widget>
  <resources/>
  <connections>
-  <connection>
-   <sender>btnLaunchLoginPage</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>firstPyQt_btn_click()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>147</x>
-     <y>110</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>164</x>
-     <y>200</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>btnFinishLoginPage</sender>
    <signal>clicked()</signal>
@@ -97,9 +104,42 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>btnUploadLinkCsv</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>uploadLinkCsv()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>59</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>61</x>
+     <y>336</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnLaunchLoginPage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>launchLoginPage()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>120</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>159</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
-  <slot>firstPyQt_btn_click()</slot>
+  <slot>launchLoginPage()</slot>
   <slot>confirmLoginComplete()</slot>
+  <slot>uploadLinkCsv()</slot>
  </slots>
 </ui>

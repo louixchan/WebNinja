@@ -36,14 +36,16 @@ except:
         "To install type: pip install Pillow")
     sys.exit(1)
 
-try:
-    from weasyprint import HTML, CSS
-except:
-    print("[WebNinja] Error: WebNinja needs WEASYPRINT module for exporting PDFs. "
-        "To install type: pip install weasyprint")
-    sys.exit(1)
+# try:
+#     from weasyprint import HTML, CSS
+# except:
+#     print("[WebNinja] Error: WebNinja needs WEASYPRINT module for exporting PDFs. "
+#         "To install type: pip install weasyprint")
+#     sys.exit(1)
 
 class WebNinjaBrowser(object):
+    browser = None
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(526, 472)
@@ -55,12 +57,18 @@ class WebNinjaBrowser(object):
         self.btnFinishLoginPage = QtWidgets.QPushButton(self.centralwidget)
         self.btnFinishLoginPage.setGeometry(QtCore.QRect(60, 120, 113, 32))
         self.btnFinishLoginPage.setObjectName("btnFinishLoginPage")
-        self.tableView = QtWidgets.QTableView(self.centralwidget)
-        self.tableView.setGeometry(QtCore.QRect(190, 40, 301, 291))
-        self.tableView.setObjectName("tableView")
+        self.tbvLinkOptionTable = QtWidgets.QTableView(self.centralwidget)
+        self.tbvLinkOptionTable.setGeometry(QtCore.QRect(190, 40, 301, 291))
+        self.tbvLinkOptionTable.setObjectName("tbvLinkOptionTable")
+        self.txtLinkCsvAddress = QtWidgets.QTextEdit(self.centralwidget)
+        self.txtLinkCsvAddress.setGeometry(QtCore.QRect(30, 210, 104, 31))
+        self.txtLinkCsvAddress.setObjectName("txtLinkCsvAddress")
+        self.btnUploadLinkCsv = QtWidgets.QPushButton(self.centralwidget)
+        self.btnUploadLinkCsv.setGeometry(QtCore.QRect(30, 260, 93, 28))
+        self.btnUploadLinkCsv.setObjectName("btnUploadLinkCsv")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 526, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 526, 26))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -68,8 +76,9 @@ class WebNinjaBrowser(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.btnLaunchLoginPage.clicked.connect(self.launchLoginPage)
         self.btnFinishLoginPage.clicked.connect(self.confirmLoginComplete)
+        self.btnUploadLinkCsv.clicked.connect(self.uploadLinkCsv)
+        self.btnLaunchLoginPage.clicked.connect(self.launchLoginPage)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -77,6 +86,7 @@ class WebNinjaBrowser(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.btnLaunchLoginPage.setText(_translate("MainWindow", "Go to Login"))
         self.btnFinishLoginPage.setText(_translate("MainWindow", "Login Done"))
+        self.btnUploadLinkCsv.setText(_translate("MainWindow", "PushButton"))
 
     def launchLoginPage(self):
         sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
@@ -87,21 +97,33 @@ class WebNinjaBrowser(object):
         windowInfo = cef.WindowInfo()
         # windowInfo.SetAsOffscreen(parentWindowHandle)
 
-        browser = cef.CreateBrowserSync(
+        self.browser = cef.CreateBrowserSync(
             window_info=windowInfo,
             url="http://www.qichacha.com/user_login"
         )
 
-        browser.SetClientHandler(WebNinja.LoadHandler())
-        browser.SetClientHandler(WebNinja.RenderHandler())
+        # browser.SetClientHandler(WebNinja.LoadHandler())
+        # browser.SetClientHandler(WebNinja.RenderHandler())
 
-        browser.SendFocusEvent(True)
+        self.browser.SendFocusEvent(True)
         # You must call WasResized at least once to let know CEF that
         # viewport size is available and that OnPaint may be called.
-        browser.WasResized()
+        self.browser.WasResized()
 
         cef.MessageLoop()
 
     def confirmLoginComplete(self):
-        pass
+        print("testing...")
+        link = "http://www.qichacha.com/firm_CN_1223aabb6d71b8c5399d0dd1d7a5473e.html"
+        # WebNinjaScrpaer.testBrowseNext(self.browser, link)
+        self.browser.LoadUrl(link)
+        print("testing...")
 
+    def uploadLinkCsv(self):
+
+        address = self.txtLinkCsvAddress.toPlainText()
+        print(address)
+        links = []
+
+        with open(address, 'w') as inputFile:
+            links = inputFile.readlines()

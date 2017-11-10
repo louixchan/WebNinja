@@ -1,0 +1,46 @@
+[1109/135111.334:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/135116.764:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005A50440:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/135116.765:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005A507D0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/135116.842:WARNING:stunport.cc(385)] Jingle:Port[00000000058FC300:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/145037.506:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/145043.710:WARNING:stunport.cc(385)] Jingle:Port[00000000058CE2B0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/145043.778:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[00000000057B5530:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/145043.778:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[00000000057B58C0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/145053.218:ERROR:stunport.cc(89)] Binding request timed out from 0.0.0.x:51705 (any)
+[1109/150913.501:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/150919.310:WARNING:stunport.cc(385)] Jingle:Port[0000000005ADF570:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/150919.382:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005523020:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/150919.382:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[00000000055233B0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/150928.176:ERROR:interface_registry.cc(203)] Failed to locate a binder for interface: blink::mojom::SensitiveInputVisibilityService requested by: content_renderer exposed by: content_browser via InterfaceProviderSpec "navigation:frame".
+[1109/150928.819:ERROR:stunport.cc(89)] Binding request timed out from 0.0.0.x:63959 (any)
+[1109/151206.850:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/151211.874:WARNING:stunport.cc(385)] Jingle:Port[000000000542E0C0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/151211.945:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005435C30:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151211.945:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005A3B8C0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151227.153:WARNING:stunport.cc(385)] Jingle:Port[0000000005BA3F40:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/151227.253:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[000000000587DBB0:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151227.253:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005A6EAB0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151236.857:WARNING:stunport.cc(385)] Jingle:Port[0000000005DEF860:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/151236.956:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[000000000542D5C0:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151236.956:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[000000000542D950:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151342.830:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/151351.630:WARNING:stunport.cc(385)] Jingle:Port[0000000005B64C60:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/151351.703:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005B77C70:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151351.703:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005B78400:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151507.367:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/151520.017:WARNING:stunport.cc(385)] Jingle:Port[00000000054D04F0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/151520.088:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005A81820:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151520.088:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[00000000053F3D70:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/151529.525:ERROR:stunport.cc(89)] Binding request timed out from 0.0.0.x:56052 (any)
+[1109/152304.723:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/152318.505:WARNING:stunport.cc(385)] Jingle:Port[00000000058AD950:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/152318.572:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005ABA4A0:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/152318.572:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005ABAE30:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/152340.155:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/152347.869:WARNING:stunport.cc(385)] Jingle:Port[0000000005DDB9D0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/152347.939:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005DF47F0:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/152347.940:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[00000000055394B0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/152526.902:ERROR:child_thread_impl.cc(762)] Request for unknown Channel-associated interface: ui::mojom::GpuMain
+[1109/152538.552:WARNING:stunport.cc(385)] Jingle:Port[0000000005C35380:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: StunPort: stun host lookup received error 0
+[1109/152538.624:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005C40FA0:data:1:0:local:Net[any:0.0.0.x/0:Unknown]]: SetOption(5, 0) failed: 0
+[1109/152538.624:WARNING:p2ptransportchannel.cc(514)] Jingle:Port[0000000005C4BAE0:data:1:0:local:Net[any:0:0:0:x:x:x:x:x/0:Unknown]]: SetOption(5, 0) failed: 0

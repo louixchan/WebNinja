@@ -7,8 +7,12 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from WebNinjaScraper import *
 
 class Ui_MainWindow(object):
+
+    browser = None
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(526, 472)
@@ -20,18 +24,12 @@ class Ui_MainWindow(object):
         self.btnFinishLoginPage = QtWidgets.QPushButton(self.centralwidget)
         self.btnFinishLoginPage.setGeometry(QtCore.QRect(60, 120, 113, 32))
         self.btnFinishLoginPage.setObjectName("btnFinishLoginPage")
-        self.tbvLinkOptionTable = QtWidgets.QTableView(self.centralwidget)
-        self.tbvLinkOptionTable.setGeometry(QtCore.QRect(190, 40, 301, 291))
-        self.tbvLinkOptionTable.setObjectName("tbvLinkOptionTable")
-        self.txtLinkCsvAddress = QtWidgets.QTextEdit(self.centralwidget)
-        self.txtLinkCsvAddress.setGeometry(QtCore.QRect(30, 210, 104, 31))
-        self.txtLinkCsvAddress.setObjectName("txtLinkCsvAddress")
-        self.btnUploadLinkCsv = QtWidgets.QPushButton(self.centralwidget)
-        self.btnUploadLinkCsv.setGeometry(QtCore.QRect(30, 260, 93, 28))
-        self.btnUploadLinkCsv.setObjectName("btnUploadLinkCsv")
+        self.tableView = QtWidgets.QTableView(self.centralwidget)
+        self.tableView.setGeometry(QtCore.QRect(190, 40, 301, 291))
+        self.tableView.setObjectName("tableView")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 526, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 526, 22))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -39,15 +37,22 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.btnFinishLoginPage.clicked.connect(MainWindow.confirmLoginComplete)
-        self.btnUploadLinkCsv.clicked.connect(MainWindow.uploadLinkCsv)
-        self.btnLaunchLoginPage.clicked.connect(MainWindow.launchLoginPage)
+        self.btnLaunchLoginPage.clicked.connect(self.launchLoginPage)
+        self.btnFinishLoginPage.clicked.connect(self.confirmLoginComplete)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.btnLaunchLoginPage.setText(_translate("MainWindow", "Go to Login"))
-        self.btnFinishLoginPage.setText(_translate("MainWindow", "Login Done"))
-        self.btnUploadLinkCsv.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton.setText(_translate("MainWindow", "PushButton"))
 
+    def launchLoginPage(self):
+        self.browser = WebNinjaScraper.startTestBrowsing()
+        return
+
+    def confirmLoginComplete(self):
+        print("testing...")
+        link = "http://www.qichacha.com/firm_CN_1223aabb6d71b8c5399d0dd1d7a5473e.html"
+        # WebNinjaScrpaer.testBrowseNext(self.browser, link)
+        self.browser.LoadUrl(link)
+        print("testing...")

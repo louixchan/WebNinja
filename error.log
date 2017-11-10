@@ -410,3 +410,9 @@ AttributeError: 'NoneType' object has no attribute 'iloc'
     URL = URLs.iloc[CURRENT_ID]["url"]
 AttributeError: 'NoneType' object has no attribute 'iloc'
 
+
+[2017-11-09 15:24:15] Traceback (most recent call last):
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaBrowser.py", line 109, in confirmLoginComplete
+    self.browser.LoadUrl(link)
+AttributeError: 'WebNinjaBrowser' object has no attribute 'browser'
+
