@@ -37,10 +37,12 @@
 
 QGroupBox#gpbLeftMenu {
     background-color: #262f3d;
+    border: 20px solid #262f3d;
 }
 
 QGroupBox#gpbTasksHeader {
     background-color: #00d2ff;
+    border: 20px solid #00d2ff;
 }
 
 QGroupBox#gpbLeftMenu > QPushButton:hover {
