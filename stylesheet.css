@@ -1,0 +1,55 @@
+#btnAllHtml {
+    background-color: transparent;
+    color: red;
+}
+
+#btnHome {
+    background-color: transparent;
+    background-image: url('home-icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#btnTasks {
+    background-color: transparent;
+    background-image: url('tasks-icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#btnBrowse {
+    background-color: transparent;
+    background-image: url('browse-icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#btnSettings {
+    background-color: transparent;
+    background-image: url('settings-icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+QGroupBox#gpbLeftMenu {
+    background-color: #262f3d;
+}
+
+QGroupBox#gpbTasksHeader {
+    background-color: #00d2ff;
+}
+
+QGroupBox#gpbLeftMenu > QPushButton:hover {
+    background-color: #515863;
+}
+
+QLabel#lblLogo {
+    background-image: url('logo-icon.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
