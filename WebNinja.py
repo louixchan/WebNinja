@@ -4,6 +4,8 @@ import re
 import subprocess
 import sys
 import time
+import datetime
+from bs4 import BeautifulSoup
 
 try:
     from cefpython3 import cefpython as cef
@@ -20,12 +22,12 @@ except:
     sys.exit(1)
 
 try:
-    from PIL import Image, PILLOW_VERSION
+    from PIL import Image, PILLOW_VERSION, ImageDraw, ImageFont
 except:
     print("[WebNinja] Error: WebNinja needs PILLOW module for exporting screenshots. "
         "To install type: pip install Pillow")
     sys.exit(1)
-
+#
 # try:
 #     from weasyprint import HTML, CSS
 # except:
@@ -48,9 +50,13 @@ EXPORT_NAME = ""
 EXPORT_SCREENSHOT_PATH = ""
 EXPORT_HTML_PATH = ""
 EXPORT_PDF_PATH = ""
-EXPORT_PDF = True
-EXPORT_HTML = True
-EXPORT_SCREENSHOT = True
+EXPORT_PDF = False
+EXPORT_HTML = False
+EXPORT_SCREENSHOT = False
+EXPORT_DOWNLOAD = False
+ERROR = False
+RETRY_LIMIT = 5
+RETRY_ATTEMPT = 0
 
 MODE = "TEST"
 
@@ -60,6 +66,10 @@ def main():
     global URLs
     global URL
     global EXPORT_BASE_PATH
+    global EXPORT_PDF
+    global EXPORT_HTML
+    global EXPORT_SCREENSHOT
+    global EXPORT_DOWNLOAD
 
     check_versions()
 
@@ -114,7 +124,7 @@ def main():
                 elif sys.argv[argvId] == "-m":
 
                     try:
-                        URLs = pandas.read_csv(sys.argv[argvId + 1], None, names = ["name", "url"])
+                        URLs = pandas.read_csv(sys.argv[argvId + 1], None, names = ["name", "url"], engine="python")
                     except:
                         print("[WebNinja] Error: Invalid file path. Please put the file in the same directory as WebNinja"
                             "To see other options, type: python3 WebNinja.py -man")
@@ -125,15 +135,19 @@ def main():
 
                 elif sys.argv[argvId] == "-html":
 
-                    EXPORT_HTML = sys.argv[argvId + 1] == T
+                    EXPORT_HTML = sys.argv[argvId + 1] == "T"
 
                 elif sys.argv[argvId] == "-pdf":
 
-                    EXPORT_PDF = sys.argv[argvId + 1] == T
+                    EXPORT_PDF = sys.argv[argvId + 1] == "T"
 
                 elif sys.argv[argvId] == "-ss":
 
-                    EXPORT_SCREENSHOT = sys.argv[argvId + 1] == T
+                    EXPORT_SCREENSHOT = sys.argv[argvId + 1] == "T"
+
+                elif sys.argv[argvId] == "-dl":
+
+                    EXPORT_DOWNLOAD = sys.argv[argvId + 1] == "T"
 
                 else:
 
@@ -293,7 +307,7 @@ def startBrowsing():
     URL = URLs.iloc[CURRENT_ID]["url"]
 
     sys.excepthook = cef.ExceptHook  # To shutdown all CEF processes on error
-    cef.Initialize(settings={"windowless_rendering_enabled": True})
+    cef.Initialize(settings={"windowless_rendering_enabled": True, "downloads_enabled": True})
 
     parentWindowHandle = 0
 
@@ -322,6 +336,7 @@ def browseNext(browser):
 
     if CURRENT_ID >= len(URLs):
         print("[WebNinja] Message: All URLs have been browsed.")
+        # time.sleep(5)
         cef.PostTask(cef.TID_UI, exit_app, browser)
         # exit_app()
     else:
@@ -363,8 +378,20 @@ def save_screenshot(browser):
         raise Exception("buffer_string is empty, OnPaint never called?")
     image = Image.frombytes("RGBA", VIEWPORT_SIZE, buffer_string,
                             "raw", "RGBA", 0, 1)
-    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
-    print("[WebNinja] Saved image: {path}".format(path=EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png"))
+    width, height = image.size
+
+    draw = ImageDraw.Draw(image)
+    text = "[WebNinja] Time Stamp: " + datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
+    font = ImageFont.truetype('arial.ttf', 12)
+    textwidth, textheight = draw.textsize(text, font)
+    margin = 5
+    x = width - textwidth - margin
+    y = height - textheight - margin
+
+    draw.text((x, y), text, font=font)
+
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+    print("[WebNinja] Saved image: {path}".format(path=EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png"))
 
 
 def open_with_default_application(path):
@@ -413,54 +440,65 @@ class LoadHandler(object):
         """Called when the loading state has changed."""
         # if not is_loading:
             # Loading is complete
-        #     sys.stdout.write(os.linesep)
+            # sys.stdout.write(os.linesep)
             # print("WebNinja has loaded the webpage...")
+            # time.sleep(0.3)
             # save_screenshot(browser)
         #     # See comments in exit_app() why PostTask must be used
         #     cef.PostTask(cef.TID_UI, exit_app, browser)
-        pass
+        # pass
 
     def OnLoadEnd(self, browser, frame, http_code):
 
+        # print(http_code)
         if frame.IsMain():
 
             global MODE
             global EXPORT_NAME
+            global ERROR
             self.stringVisitor = StringVisitor()
-            # self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"]
+            self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"])
 
+            if http_code == 200:
+                global RETRY_ATTEMPT
+                RETRY_ATTEMPT = 0
+                # if MODE == "TEST":
+                #     MODE = "TEST3"
+                #     return
+                #
+                # elif MODE == "TEST2":
+                #
+                #     self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + "target"
+                #     frame.GetSource(self.stringVisitor)
+                #     return
+                #
+                # elif MODE == "TEST3":
+                #     testBrowseNext(browser, "http://www.qichacha.com/firm_CN_f470d4e4d2bf1fc59650255443707461.html")
+                #     return
 
-            # if MODE == "TEST":
-            #     MODE = "TEST3"
-            #     return
-            #
-            # elif MODE == "TEST2":
-            #
-            #     self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + "target"
-            #     frame.GetSource(self.stringVisitor)
-            #     return
-            #
-            # elif MODE == "TEST3":
-            #     testBrowseNext(browser, "http://www.qichacha.com/firm_CN_f470d4e4d2bf1fc59650255443707461.html")
-            #     return
+                print("[WebNinja] Message: has loaded the website successfully...")
 
+                if EXPORT_DOWNLOAD:
+                    print("Downloading...")
+                    browser.StartDownload(browser.GetUrl())
 
-            # print("[WebNinja] Message: has loaded the website successfully...")
+                else:
+                    # print("Here!")
+                    if EXPORT_HTML:
+                        frame.GetSource(self.stringVisitor)
 
-            # if EXPORT_HTML or EXPORT_PDF:
-            #     frame.GetSource(self.stringVisitor)
+                    if EXPORT_SCREENSHOT:
+                        save_screenshot(browser)
+                # browser.Print()
+                # frame.GetText(self.stringVisitor)
+                # print(SV.value)
 
-            # if EXPORT_SCREENSHOT:
-            #     save_screenshot(browser)
-            # browser.Print()
-            # frame.GetText(self.stringVisitor)
-            # print(SV.value)
+                browseNext(browser)
 
-            # browseNext(browser)
-
-    def OnLoadError(self, browser, frame, error_code, failed_url, **_):
+    def OnLoadError(self, browser, frame, error_code, error_text_out, failed_url):
         """Called when the resource load for a navigation fails
         or is canceled."""
+        global ERROR
         if not frame.IsMain():
             # We are interested only in loading main url.
             # Ignore any errors during loading of other frames.
@@ -469,8 +507,22 @@ class LoadHandler(object):
               .format(url=failed_url))
         print("[WebNinja] Error code: {code}"
               .format(code=error_code))
-        # See comments in exit_app() why PostTask must be used
-        cef.PostTask(cef.TID_UI, exit_app, browser)
+        print("[WebNinja] Error description: {text}"
+              .format(text=error_text_out))
+        # ERROR = True
+        global RETRY_LIMIT
+        global RETRY_ATTEMPT
+
+        if RETRY_ATTEMPT < RETRY_LIMIT:
+            print("[WebNinja] Message: Retrying to load url: {url}"
+                  .format(url=failed_url))
+            global CURRENT_ID
+            CURRENT_ID = CURRENT_ID - 1
+            RETRY_ATTEMPT = RETRY_ATTEMPT + 1
+            browseNext(browser)
+        # else:
+            # See comments in exit_app() why PostTask must be used
+            # cef.PostTask(cef.TID_UI, exit_app, browser)
 
 # class Frame(object):
 
@@ -486,13 +538,14 @@ class StringVisitor(object):
 
         # print(CURRENT_ID)
         # convertHtmlToPdf(value, "testing.pdf")
-        # html = HTML(string=value)
+        # html = BeautifulSoup(value, "html.parser")
         # html.write_pdf('testing.pdf')
 
         if EXPORT_HTML:
             print("[WebNinja] Message: Working hard to export the HTML source code...")
             with open(self.EXPORT_PATH + ".html", "w+") as f:
                 f.write(value)
+                # f.write(html.prettify())
 
         # if EXPORT_PDF:
         #     print("[WebNinja] Message: Working hard to export PDF document...")

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-__author__ = 'djstava@gmail.com'
 import sys
-from PyQt5.QtWidgets import QApplication , QMainWindow
-from testing import *
+# from PyQt5.QtWidgets import QApplication , QMainWindow
+# from testing import *
 from WebNinjaBrowser import *
 from WebNinja import checkDependencies
 import htmlPy
@@ -15,7 +15,7 @@ if __name__ == '__main__':
 	app.template_path = os.path.abspath(".")
 	app.static_path = os.path.abspath(".")
 
-	app.template = ("index.html", {"username": "htmlPy_user"})
+	app.template = ("startbootstrap-sb-admin-gh-pages/index.html", {"username": "htmlPy_user"})
 
 	app.start()
 

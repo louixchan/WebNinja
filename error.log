@@ -416,3 +416,288 @@ AttributeError: 'NoneType' object has no attribute 'iloc'
     self.browser.LoadUrl(link)
 AttributeError: 'WebNinjaBrowser' object has no attribute 'browser'
 
+
+[2018-01-11 12:25:31] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 454, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 363, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-11 12:26:27] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 457, in OnLoadEnd
+    print(SV.value)
+NameError: global name 'SV' is not defined
+
+
+[2018-01-11 12:28:03] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 415, in OnLoadingStateChange
+    Loading is complete
+NameError: global name 'Loading' is not defined
+
+
+[2018-01-11 12:28:30] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 418, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1373, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1830, in _getitem_axis
+    self._is_valid_integer(key, axis)
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1713, in _is_valid_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+
+[2018-01-11 21:08:23] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 418, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\Comedy - Dark/Black1.png'
+
+
+[2018-01-12 09:56:24] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 454, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\Comedy - Dark/Black1.png'
+
+
+[2018-01-12 09:57:42] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 418, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 22] invalid mode ('w+b') or filename: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\Comedy - What If?1.png'
+
+
+[2018-01-12 10:04:16] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 418, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\Mouse/Rat - Featured1.png'
+
+
+[2018-01-12 10:15:32] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 418, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1373, in __getitem__
+    return self._getitem_axis(maybe_callable, axis=axis)
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1830, in _getitem_axis
+    self._is_valid_integer(key, axis)
+  File "C:\Python27\lib\site-packages\pandas\core\indexing.py", line 1713, in _is_valid_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+
+[2018-01-16 12:15:19] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "WebNinja.py", line 419, in OnLoadingStateChange
+    save_screenshot(browser)
+  File "WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\pandas\core\indexing.py", line 1328, in __getitem__
+    return self._getitem_axis(key, axis=0)
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\pandas\core\indexing.py", line 1749, in _getitem_axis
+    self._is_valid_integer(key, axis)
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\pandas\core\indexing.py", line 1638, in _is_valid_integer
+    raise IndexError("single positional indexer is out-of-bounds")
+IndexError: single positional indexer is out-of-bounds
+
+
+[2018-01-16 12:16:23] Traceback (most recent call last):
+  File "string_visitor.pyx", line 72, in cefpython_py36.StringVisitor_Visit (cefpython_py36.cpp:60593)
+  File "WebNinja.py", line 490, in Visit
+    html = HTML(string=value)
+NameError: name 'HTML' is not defined
+
+
+[2018-01-16 12:17:32] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py27.LoadHandler_OnLoadingStateChange (cefpython_py27.cpp:81166)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 419, in OnLoadingStateChange
+    # save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 366, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\16012018\\Comedy - Dark/Black1.png'
+
+
+[2018-01-16 12:17:45] Traceback (most recent call last):
+  File "string_visitor.pyx", line 72, in cefpython_py36.StringVisitor_Visit (cefpython_py36.cpp:60593)
+  File "WebNinja.py", line 490, in Visit
+    html = HTML(string=value)
+NameError: name 'HTML' is not defined
+
+
+[2018-01-16 12:20:43] Traceback (most recent call last):
+  File "string_visitor.pyx", line 72, in cefpython_py27.StringVisitor_Visit (cefpython_py27.cpp:60446)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 490, in Visit
+    html = HTML(string=value)
+NameError: global name 'HTML' is not defined
+
+
+[2018-01-16 12:25:58] Traceback (most recent call last):
+  File "string_visitor.pyx", line 72, in cefpython_py27.StringVisitor_Visit (cefpython_py27.cpp:60446)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 491, in Visit
+    html = BeautifulSoup(value, parser="html.parser")
+  File "C:\Python27\lib\site-packages\bs4\__init__.py", line 152, in __init__
+    "__init__() got an unexpected keyword argument '%s'" % arg)
+TypeError: __init__() got an unexpected keyword argument 'parser'
+
+
+[2018-01-16 12:28:10] Traceback (most recent call last):
+  File "string_visitor.pyx", line 72, in cefpython_py27.StringVisitor_Visit (cefpython_py27.cpp:60446)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 497, in Visit
+    f.write(html.prettify())
+UnicodeEncodeError: 'ascii' codec can't encode character u'\u2013' in position 3690: ordinal not in range(128)
+
+
+[2018-01-16 12:31:21] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 370, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+  File "C:\Python27\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+IOError: [Errno 22] invalid mode ('w+b') or filename: 'C:\\Users\\lchan1\\Desktop\\wax\\export\\16012018\\Comedy - What If?1.png'
+
+
+[2018-01-17 15:21:22] Traceback (most recent call last):
+  File "render_handler.pyx", line 207, in cefpython_py27.RenderHandler_OnPaint (cefpython_py27.cpp:85793)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 536, in OnPaint
+    origin="top-left")
+  File "paint_buffer.pyx", line 71, in cefpython_py27.PaintBuffer.GetString (cefpython_py27.cpp:62176)
+  File "paint_buffer.pyx", line 100, in cefpython_py27.PaintBuffer.GetString (cefpython_py27.cpp:62018)
+MemoryError
+
+
+[2018-01-19 15:37:36] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 435, in OnLoadEnd
+    self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"]
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('S58') dtype('S58') dtype('S58')
+
+
+[2018-01-19 15:38:47] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 370, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('S58') dtype('S58') dtype('S58')
+
+
+[2018-01-19 15:39:18] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 370, in save_screenshot
+    image.save(EXPORT_BASE_PATH + URLs.iloc[CURRENT_ID]["name"] + ".png", "PNG")
+TypeError: ufunc 'add' did not contain a loop with signature matching types dtype('S58') dtype('S58') dtype('S58')
+
+
+[2018-01-19 16:09:23] Traceback (most recent call last):
+  File "render_handler.pyx", line 207, in cefpython_py36.RenderHandler_OnPaint (cefpython_py36.cpp:85940)
+  File "WebNinja.py", line 522, in OnPaint
+    def OnPaint(self, browser, element_type, paint_buffer, **_):
+KeyboardInterrupt
+
+
+[2018-01-25 11:18:56] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 367, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-25 11:19:12] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 367, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-25 11:20:40] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 459, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 367, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-25 19:48:38] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py27.LoadHandler_OnLoadEnd (cefpython_py27.cpp:81939)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 463, in OnLoadEnd
+    browser.startDownload()
+AttributeError: 'cefpython_py27.PyBrowser' object has no attribute 'startDownload'
+
+
+[2018-01-25 19:51:16] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 463, in OnLoadEnd
+    browser.startDownload()
+AttributeError: 'cefpython_py36.PyBrowser' object has no attribute 'startDownload'
+
+
+[2018-01-25 19:54:08] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 463, in OnLoadEnd
+    browser.StartDownload()
+TypeError: StartDownload() takes exactly one argument (0 given)
+
+
+[2018-01-30 11:29:46] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 472, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 374, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-30 11:40:06] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 472, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 374, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-01-30 11:55:36] Traceback (most recent call last):
+  File "load_handler.pyx", line 86, in cefpython_py36.LoadHandler_OnLoadError (cefpython_py36.cpp:82526)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 499, in OnLoadError
+    .format(code=error_text_out))
+KeyError: 'text'
+
