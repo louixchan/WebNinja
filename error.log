@@ -701,3 +701,93 @@ Exception: buffer_string is empty, OnPaint never called?
     .format(code=error_text_out))
 KeyError: 'text'
 
+
+[2018-02-02 16:08:30] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 378, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-02 16:08:43] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinja.py", line 378, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-06 11:35:00] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 43, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 39, in main
+    test.createBrowser()
+TypeError: createBrowser() takes 0 positional arguments but 1 was given
+
+
+[2018-02-06 11:35:14] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 43, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 39, in main
+    test.createBrowser()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 23, in createBrowser
+    url=URL
+NameError: name 'URL' is not defined
+
+
+[2018-02-06 12:00:39] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 67, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 64, in main
+    test.kill()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 49, in kill
+    browser = null
+NameError: name 'null' is not defined
+
+
+[2018-02-06 16:27:55] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 69, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 62, in main
+    test.start()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 41, in start
+    browsers[0].LoadUrl('www.facebook.com')
+NameError: name 'browsers' is not defined
+
+
+[2018-02-06 17:05:56] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 77, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 67, in main
+    test.createBrowser()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 35, in createBrowser
+    browser.urls = self.urls[0:4]
+AttributeError: 'cefpython_py36.PyBrowser' object has no attribute 'urls'
+
+
+[2018-02-06 17:09:22] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 77, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 70, in main
+    test.start()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 49, in start
+    self.browsers[0].LoadUrl(self.browsers[0].urls[0])
+AttributeError: 'cefpython_py36.PyBrowser' object has no attribute 'urls'
+
+
+[2018-02-06 17:10:56] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 32, in OnLoadEnd
+    self.stringVisitor = StringVisitor()
+NameError: name 'StringVisitor' is not defined
+
+
+[2018-02-06 17:11:19] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 73, in OnLoadEnd
+    browser.LoadUrl(self.urls[self.index])
+IndexError: list index out of range
+
