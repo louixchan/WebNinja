@@ -1,29 +1,48 @@
 from cefpython3 import cefpython as cef
 import pdfkit
+from threading import Lock
+from ExportUtility import *
 
 class LoadHandler(object):
 
-    def __init__(self, urls, index = -1, name = ''):
+    def __init__(self, urls, index=-1, name='', browserCount=1):
 
         self.urls = urls
         self.index = index
         self.name = name
+        self.lock = Lock()
+        #
+        # i = 0
+        # while i < browserCount:
+        #
+        #
 
     stringVisitor = None
     RETRY_LIMIT = 0
     RETRY_COUNT = 0
     CURRENT_URL = ''
 
+    browserCount = 0
+    browsers = {}
+    browserUrls = {}
+    browserCurrentUrl = {}
+    browserCurrentState = {}
+    nextUrlId = 0
+    URLS = []
+
     def OnLoadingStateChange(self, browser, is_loading, **_):
         """Called when the loading state has changed."""
 
-        if not is_loading and self.CURRENT_URL != browser.GetUrl():
-            print(self.name, browser.GetUrl())
-            self.CURRENT_URL = browser.GetUrl()
+        if not is_loading:
+            print(browser.GetIdentifier(), browser.GetUrl())
 
-            if self.index < len(self.urls):
-                self.index = self.index + 1
-                browser.LoadUrl(self.urls[self.index])
+            # if self.nextUrlId > 0:
+            #     save_screenshot(browser, str(browser.GetUrl().split("/")[-2]))
+
+            if self.nextUrlId < len(self.urls):
+                with self.lock:
+                    browser.LoadUrl(self.urls[self.nextUrlId])
+                    self.nextUrlId = self.nextUrlId + 1
             else:
                 browser.CloseBrowser()
             # Loading is complete
