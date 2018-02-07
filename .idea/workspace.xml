@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="083f96d5-e73e-4e30-b16a-60cac7853802" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/StringVisitor.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebNinjaBrowserHandler.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/WebNinjaLoadHandler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebNinjaBrowserHandler.py" afterPath="$PROJECT_DIR$/WebNinjaBrowserHandler.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/WebNinjaLoadHandler.py" afterPath="$PROJECT_DIR$/WebNinjaLoadHandler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/error.log" afterPath="$PROJECT_DIR$/error.log" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,7 +19,7 @@
       <file leaf-file-name="WebNinjaBrowser.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebNinjaBrowser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
+            <state relative-caret-position="21">
               <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
               <folding>
                 <element signature="e#303#312#0" expanded="true" />
@@ -63,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/WebNinja.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
-              <caret line="345" column="28" lean-forward="true" selection-start-line="345" selection-start-column="15" selection-end-line="345" selection-end-column="28" />
+              <caret line="345" column="28" lean-forward="false" selection-start-line="345" selection-start-column="15" selection-end-line="345" selection-end-column="28" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
                 <element signature="e#1579#5294#0" expanded="false" />
@@ -79,11 +78,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebNinjaBrowserHandler.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="WebNinjaBrowserHandler.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/WebNinjaBrowserHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+            <state relative-caret-position="231">
+              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -91,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebNinjaLoadHandler.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WebNinjaLoadHandler.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/WebNinjaLoadHandler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-21">
-              <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+            <state relative-caret-position="84">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="27" selection-end-column="38" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -159,8 +158,8 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/WebNinja.py" />
         <option value="$PROJECT_DIR$/StringVisitor.py" />
-        <option value="$PROJECT_DIR$/WebNinjaBrowserHandler.py" />
         <option value="$PROJECT_DIR$/WebNinjaLoadHandler.py" />
+        <option value="$PROJECT_DIR$/WebNinjaBrowserHandler.py" />
       </list>
     </option>
   </component>
@@ -308,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1517502470210</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Started implementing multi-browser">
+      <created>1517939572553</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1517939572553</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -343,7 +349,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Screenshots with watermark" />
-    <option name="LAST_COMMIT_MESSAGE" value="Screenshots with watermark" />
+    <MESSAGE value="Started implementing multi-browser" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started implementing multi-browser" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -755,16 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebNinjaBrowser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
-          <folding>
-            <element signature="e#303#312#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/WebNinjaScraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9051">
@@ -784,7 +781,7 @@
     <entry file="file://$PROJECT_DIR$/WebNinja.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
-          <caret line="345" column="28" lean-forward="true" selection-start-line="345" selection-start-column="15" selection-end-line="345" selection-end-column="28" />
+          <caret line="345" column="28" lean-forward="false" selection-start-line="345" selection-start-column="15" selection-end-line="345" selection-end-column="28" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
             <element signature="e#1579#5294#0" expanded="false" />
@@ -799,20 +796,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/WebNinjaBrowserHandler.py">
+    <entry file="file://$PROJECT_DIR$/WebNinjaBrowser.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="27" column="35" lean-forward="false" selection-start-line="27" selection-start-column="35" selection-end-line="27" selection-end-column="35" />
+        <state relative-caret-position="21">
+          <caret line="44" column="27" lean-forward="false" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#303#312#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/WebNinjaLoadHandler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-21">
-          <caret line="83" column="40" lean-forward="true" selection-start-line="83" selection-start-column="40" selection-end-line="83" selection-end-column="40" />
+        <state relative-caret-position="84">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="27" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/WebNinjaBrowserHandler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

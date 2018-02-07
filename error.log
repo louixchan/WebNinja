@@ -791,3 +791,47 @@ NameError: name 'StringVisitor' is not defined
     browser.LoadUrl(self.urls[self.index])
 IndexError: list index out of range
 
+
+[2018-02-07 12:21:19] Traceback (most recent call last):
+  File "v8context_handler.pyx", line 25, in cefpython_py36.V8ContextHandler_OnContextCreated (cefpython_py36.cpp:97913)
+  File "frame.pyx", line 23, in cefpython_py36.GetPyFrame (cefpython_py36.cpp:25741)
+Exception: GetPyFrame(): CefFrame reference is NULL
+
+
+[2018-02-07 13:17:39] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 78, in OnLoadEnd
+    browser.LoadUrl(self.urls[self.index])
+IndexError: list index out of range
+
+
+[2018-02-07 13:18:20] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 78, in OnLoadEnd
+    browser.LoadUrl(self.urls[self.index])
+IndexError: list index out of range
+
+
+[2018-02-07 13:20:18] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 25, in OnLoadingStateChange
+    browser.LoadUrl(self.urls[self.index])
+IndexError: list index out of range
+
+
+[2018-02-07 13:20:50] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 26, in OnLoadingStateChange
+    browser.LoadUrl(self.urls[self.index])
+IndexError: list index out of range
+
+
+[2018-02-07 13:32:00] Traceback (most recent call last):
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 79, in <module>
+    main()
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 69, in main
+    test.createBrowser('testing1')
+  File "C:/Users/lchan1/Documents/WebNinja/WebNinjaBrowserHandler.py", line 32, in createBrowser
+    browser.name = ''
+AttributeError: 'cefpython_py36.PyBrowser' object has no attribute 'name'
+

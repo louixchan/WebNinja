@@ -3,18 +3,29 @@ import pdfkit
 
 class LoadHandler(object):
 
-    def __init__(self, urls, index = -1):
+    def __init__(self, urls, index = -1, name = ''):
 
         self.urls = urls
         self.index = index
+        self.name = name
 
     stringVisitor = None
     RETRY_LIMIT = 0
     RETRY_COUNT = 0
+    CURRENT_URL = ''
 
     def OnLoadingStateChange(self, browser, is_loading, **_):
         """Called when the loading state has changed."""
-        # if not is_loading:
+
+        if not is_loading and self.CURRENT_URL != browser.GetUrl():
+            print(self.name, browser.GetUrl())
+            self.CURRENT_URL = browser.GetUrl()
+
+            if self.index < len(self.urls):
+                self.index = self.index + 1
+                browser.LoadUrl(self.urls[self.index])
+            else:
+                browser.CloseBrowser()
             # Loading is complete
             # sys.stdout.write(os.linesep)
             # print("WebNinja has loaded the webpage...")
@@ -24,15 +35,18 @@ class LoadHandler(object):
         #     cef.PostTask(cef.TID_UI, exit_app, browser)
         # pass
 
-    def OnLoadEnd(self, browser, frame, http_code):
+    # def OnLoadEnd(self, browser, frame, http_code):
 
         # print(http_code)
-        if frame.IsMain():
+        # if frame.IsMain():
 
             # self.stringVisitor = StringVisitor()
             # self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"])
 
-            if http_code == 200:
+
+            # if http_code == 200 and browser.GetUrl() != self.CURRENT_URL:
+            #
+            #     self.CURRENT_URL = browser.GetUrl()
                 # global RETRY_ATTEMPT
                 # RETRY_ATTEMPT = 0
                 # # if MODE == "TEST":
@@ -68,9 +82,7 @@ class LoadHandler(object):
 
                 # browser.browseNext()
 
-                if self.index < len(self.urls):
-                    self.index = self.index + 1
-                    browser.LoadUrl(self.urls[self.index])
+
 #
 #     def OnLoadError(self, browser, frame, error_code, error_text_out, failed_url):
 #         """Called when the resource load for a navigation fails

@@ -1,12 +1,17 @@
 from cefpython3 import cefpython as cef
 import sys
 import time
-from WebNinjaLoadHandler import LoadHandler
+# from WebNinjaLoadHandler import LoadHandler
 
-class WebNinjaBrowserHandler:
+class WebNinjaBrowserHandler():
 
 	browserCount = 0
-	browsers = []
+	browsers = {}
+	browserUrls = {}
+	browserCurrentUrl = {}
+	browserCurrentState = {}
+	URLS = []
+
 
 	def __init__(self):
 
@@ -17,7 +22,7 @@ class WebNinjaBrowserHandler:
 		self.urls = ['www.facebook.com', 'www.google.com.hk', 'www.youtube.com', 'www.reddit.com',
 		        'www.instagram.com', 'www.twitter.com', 'www.maps.google.com', 'www.pypi.python.org']
 
-	def createBrowser(self):
+	def createBrowser(self, name):
 
 		parentWindowHandle = 0
 
@@ -29,19 +34,12 @@ class WebNinjaBrowserHandler:
 			url='www.google.com.hk'
 		)
 
-		browser.SetClientHandler(LoadHandler(self.urls[0:4], -1))
-		# browser.SetClientHandler(RenderHandler())
-
-		# browser.urls =
-		# browser.index = -1
-		self.urls = self.urls[-4:]
+		browser.SetClientHandler(self)
 
 		browser.SendFocusEvent(True)
-		# You must call WasResized at least once to let know CEF that
-		# viewport size is available and that OnPaint may be called.
 		browser.WasResized()
 
-		self.browsers.append(browser)
+		self.browsers[browser.GetIdentifier()] = browser
 		# cef.MessageLoop()
 
 	def start(self):
@@ -61,11 +59,24 @@ class WebNinjaBrowserHandler:
 
 		cef.QuitMessageLoop()
 
+	def OnLoadingStateChange(self, browser, is_loading, **_):
+		"""Called when the loading state has changed."""
+
+		if not is_loading and self.CURRENT_URL != browser.GetUrl():
+			print(self.name, browser.GetUrl())
+			self.CURRENT_URL = browser.GetUrl()
+
+			if self.index < len(self.urls):
+				self.index = self.index + 1
+				browser.LoadUrl(self.urls[self.index])
+			else:
+				browser.CloseBrowser()
+
 
 def main():
 	test = WebNinjaBrowserHandler()
-	test.createBrowser()
-	test.createBrowser()
+	test.createBrowser('testing1')
+	test.createBrowser('testing2')
 
 	test.start()
 
