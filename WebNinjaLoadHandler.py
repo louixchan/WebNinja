@@ -34,15 +34,18 @@ class LoadHandler(object):
         """Called when the loading state has changed."""
 
         if not is_loading:
-            print(browser.GetIdentifier(), browser.GetUrl())
+            # print(browser.GetIdentifier(), browser.GetUrl())
 
-            # if self.nextUrlId > 0:
-            #     save_screenshot(browser, str(browser.GetUrl().split("/")[-2]))
+            if self.browserCurrentState[browser.GetIdentifier()] > 0:
+                save_screenshot(browser, str(browser.GetUrl().split("/")[-2]))
+
+            self.browserCurrentState[browser.GetIdentifier()] = self.browserCurrentState[browser.GetIdentifier()] + 1
 
             if self.nextUrlId < len(self.urls):
                 with self.lock:
-                    browser.LoadUrl(self.urls[self.nextUrlId])
+                    nextUrl = self.urls[self.nextUrlId]
                     self.nextUrlId = self.nextUrlId + 1
+                browser.LoadUrl(nextUrl)
             else:
                 browser.CloseBrowser()
             # Loading is complete

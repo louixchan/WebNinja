@@ -14,7 +14,6 @@ def save_screenshot(browser, name=''):
     # Browser object provides GetUserData/SetUserData methods
     # for storing custom data associated with browser. The
     # "OnPaint.buffer_string" data is set in RenderHandler.OnPaint.
-    global CURRENT_ID
 
     buffer_string = browser.GetUserData("OnPaint.buffer_string")
     if not buffer_string:
@@ -33,4 +32,4 @@ def save_screenshot(browser, name=''):
 
     draw.text((x, y), text, font=font)
 
-    image.save('C:/Users/lchan1/Desktop/testing' + name + '.png', "PNG")
+    image.save('C:/Users/lchan1/Desktop/wax/imdb/cache/' + name + '.png', "PNG")
