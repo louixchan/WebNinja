@@ -252,7 +252,7 @@ def main():
 					URLs = pandas.read_csv(sys.argv[argvId + 1], None, names=["name", "url"], engine="python")
 				except:
 					print(
-						"[WebNinja] Error: Invalid file path. To see other options, type: python3 WebNinja.py -man")
+						"[WebNinja] Error: Invalid file path. To see other options, type: python3 WebNinjaBrowserHandler.py -man")
 
 				argvId = argvId + 1
 
@@ -263,13 +263,13 @@ def main():
 				except:
 					print(
 						"[WebNinja] Error: Positive integer is expected for Browser Count. To see other options, type: "
-						"python3 WebNinja.py -man"
+						"python3 WebNinjaBrowserHandler.py -man"
 					)
 
 				if BROWSER_COUNT < 1:
 					print(
 						"[WebNinja] Error: Positive integer is expected for Browser Count. To see other options, type: "
-						"python3 WebNinja.py -man"
+						"python3 WebNinjaBrowserHandler.py -man"
 					)
 					sys.exit(1)
 
@@ -299,20 +299,20 @@ def main():
 			else:
 
 				print("[WebNinja] Error: Option %s not recognised. To see all options, "
-					  "type: python3 WebNinja.py -man" % sys.argv[argvId])
+					  "type: python3 WebNinjaBrowserHandler.py -man" % sys.argv[argvId])
 				sys.exit(1)
 
 			argvId = argvId + 1
 
 		if (argvId != len(sys.argv)):
 			print("[WebNinja] Error: Option %s has a missing specifier. To see all options, "
-				  "type: python3 WebNinja.py -man" % sys.argv[argvId - 2])
+				  "type: python3 WebNinjaBrowserHandler.py -man" % sys.argv[argvId - 2])
 			sys.exit(1)
 
 	if len(URLs) == 0:
 		print(
-			"[WebNinja] Error: No URL specified. To see al options, "
-			"type: python3 WebNinja.py -man"
+			"[WebNinja] Error: No URL specified. To see all options, "
+			"type: python3 WebNinjaBrowserHandler.py -man"
 		)
 		sys.exit(1)
 
