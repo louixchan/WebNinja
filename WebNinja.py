@@ -63,6 +63,9 @@ MODE = "TEST"
 
 def main():
 
+    print("WebNinja.py is an archived version of the original single thread WebNinja.")
+    print("Please refer to WebNinjaBrowserHandler.py for multi-thread version.")
+
     global URLs
     global URL
     global EXPORT_BASE_PATH
@@ -126,8 +129,7 @@ def main():
                     try:
                         URLs = pandas.read_csv(sys.argv[argvId + 1], None, names = ["name", "url"], engine="python")
                     except:
-                        print("[WebNinja] Error: Invalid file path. Please put the file in the same directory as WebNinja"
-                            "To see other options, type: python3 WebNinja.py -man")
+                        print("[WebNinja] Error: Invalid file path. To see other options, type: python3 WebNinja.py -man")
 
                 elif sys.argv[argvId] == "-e":
 
@@ -391,7 +393,10 @@ def save_screenshot(browser):
     draw.text((x, y), text, font=font)
 
     image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
-    print("[WebNinja] Saved image: {path}".format(path=EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png"))
+    print("[WebNinja] Saved image: {path}".format(path=EXPORT_BASE_PATH +
+                                                       str(URLs.iloc[CURRENT_ID]["name"]
+                                                           .encode("iso-8859-15", "replace")
+                                                           .decode("iso-8859-15")) + ".png"))
 
 
 def open_with_default_application(path):
@@ -457,7 +462,8 @@ class LoadHandler(object):
             global EXPORT_NAME
             global ERROR
             self.stringVisitor = StringVisitor()
-            self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"])
+            self.stringVisitor.EXPORT_PATH = EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"])\
+                .encode("iso-8859-15", "replace").decode("iso-8859-15")
 
             if http_code == 200:
                 global RETRY_ATTEMPT

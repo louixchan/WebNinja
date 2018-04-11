@@ -1022,3 +1022,398 @@ IndexError: list index out of range
     save_screenshot(browser, str(browser.GetUrl().split("/")[-2]))
 IndexError: list index out of range
 
+
+[2018-02-12 16:06:04] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 16:47:12] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 17:01:29] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Did You Hear About the Morgans?.png'
+
+
+[2018-02-12 17:11:11] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 17:35:20] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Did You Hear About the Morgans?.png'
+
+
+[2018-02-12 17:37:18] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p2 Is Anybody There?.png'
+
+
+[2018-02-12 17:41:23] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 17:47:10] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 17:49:54] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Precious Based on the Novel "Push" by Sapphire.png'
+
+
+[2018-02-12 17:53:24] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Toy Story / Toy Story 2 (3D).png'
+
+
+[2018-02-12 17:56:55] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2009p1 Did You Hear About the Morgans?.png'
+
+
+[2018-02-12 18:13:37] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2010p2 Twilight/New Moon Combo (one-night-only).png'
+
+
+[2018-02-12 18:39:50] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2010p6 In/Significant Others.png'
+
+
+[2018-02-13 10:33:52] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2011p1 50/50.png'
+
+
+[2018-02-13 10:48:10] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2011p5 Went The Day Well? (2011 re-release).png'
+
+
+[2018-02-13 11:06:23] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 393, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2011p6 The Harvest/La Cosecha.png'
+
+
+[2018-02-13 13:47:06] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 491, in OnLoadEnd
+    # browser.Print()
+  File "WebNinja.py", line 393, in save_screenshot
+    print("[WebNinja] Saved image: {path}".format(path=EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png"))
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:\\Users\\lchan1\\Desktop\\wax\\waxScrap\\12022018\\2016p3 Things To Come\x0b.png'
+
+
+[2018-02-13 17:21:46] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 69, in OnLoadEnd
+    self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name']
+KeyError: 4
+
+
+[2018-02-13 17:23:42] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 70, in OnLoadEnd
+    self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name']
+KeyError: 1
+
+
+[2018-02-13 17:24:37] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:25:51] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:28:18] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:29:08] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:30:35] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:32:25] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 42, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:32:48] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:35:12] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:36:30] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:38:31] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+
+
+[2018-02-13 17:38:50] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 103, in OnLoadEnd
+    if EXPORT_HTML:
+NameError: name 'EXPORT_HTML' is not defined
+
+
+[2018-02-13 18:26:29] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 103, in OnLoadEnd
+    if EXPORT_HTML:
+NameError: name 'EXPORT_HTML' is not defined
+
+
+[2018-02-13 18:27:00] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 103, in OnLoadEnd
+    if EXPORT_HTML:
+NameError: name 'EXPORT_HTML' is not defined
+
+
+[2018-02-13 18:33:26] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 35, in save_screenshot
+    image.save('C:/Users/lchan1/Desktop/wax/imdb/cache/' + name + '.png', "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: "C:/Users/lchan1/Desktop/wax/imdb/cache/2016p7 Don't Call Me Son\x0b.png"
+
+
+[2018-02-13 18:35:39] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 44, in OnLoadingStateChange
+    save_screenshot(browser, self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 35, in save_screenshot
+    image.save('C:/Users/lchan1/Desktop/wax/imdb/cache/' + name + '.png', "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:/Users/lchan1/Desktop/wax/imdb/cache/2016p7 We Are Twisted F***ing Sister!.png'
+
+
+[2018-02-13 18:49:57] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 490, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 392, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:/Users/lchan1/Desktop/wax/waxScrap/12022018/2016p7 We Are Twisted F***ing Sister!.png'
+
+
+[2018-02-14 13:56:16] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 490, in OnLoadEnd
+    save_screenshot(browser)
+  File "WebNinja.py", line 392, in save_screenshot
+    image.save(EXPORT_BASE_PATH + str(URLs.iloc[CURRENT_ID]["name"]) + ".png", "PNG")
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\site-packages\PIL\Image.py", line 1925, in save
+    fp = builtins.open(filename, "w+b")
+OSError: [Errno 22] Invalid argument: 'C:/Users/lchan1/Desktop/wax/waxScrap/12022018/2008p3 Bigger, Stronger, Faster*.png'
+
+
+[2018-02-15 15:50:03] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 495, in OnLoadEnd
+    browseNext(browser)
+  File "WebNinja.py", line 345, in browseNext
+    browser.LoadUrl(URL)
+  File "browser.pyx", line 414, in cefpython_py36.PyBrowser.LoadUrl (cefpython_py36.cpp:17681)
+  File "browser.pyx", line 415, in cefpython_py36.PyBrowser.LoadUrl (cefpython_py36.cpp:17632)
+  File "frame.pyx", line 185, in cefpython_py36.PyFrame.LoadUrl (cefpython_py36.cpp:29427)
+  File "utils.pyx", line 78, in cefpython_py36.GetNavigateUrl (cefpython_py36.cpp:6985)
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\re.py", line 182, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or bytes-like object
+
+
+[2018-02-15 15:55:23] Traceback (most recent call last):
+  File "load_handler.pyx", line 58, in cefpython_py36.LoadHandler_OnLoadEnd (cefpython_py36.cpp:82086)
+  File "WebNinja.py", line 495, in OnLoadEnd
+    browseNext(browser)
+  File "WebNinja.py", line 345, in browseNext
+    browser.LoadUrl(URL)
+  File "browser.pyx", line 414, in cefpython_py36.PyBrowser.LoadUrl (cefpython_py36.cpp:17681)
+  File "browser.pyx", line 415, in cefpython_py36.PyBrowser.LoadUrl (cefpython_py36.cpp:17632)
+  File "frame.pyx", line 185, in cefpython_py36.PyFrame.LoadUrl (cefpython_py36.cpp:29427)
+  File "utils.pyx", line 78, in cefpython_py36.GetNavigateUrl (cefpython_py36.cpp:6985)
+  File "C:\Users\lchan1\AppData\Local\Programs\Python\Python36-32\lib\re.py", line 182, in search
+    return _compile(pattern, flags).search(string)
+TypeError: expected string or bytes-like object
+
+
+[2018-02-20 10:56:45] Traceback (most recent call last):
+  File "load_handler.pyx", line 20, in cefpython_py36.LoadHandler_OnLoadingStateChange (cefpython_py36.cpp:81313)
+  File "C:\Users\lchan1\Documents\WebNinja\WebNinjaLoadHandler.py", line 45, in OnLoadingStateChange
+    self.EXPORT_BASE_PATH + self.urls.iloc[self.browserCurrentIndex[browser.GetIdentifier()]]['name'])
+  File "C:\Users\lchan1\Documents\WebNinja\ExportUtility.py", line 20, in save_screenshot
+    raise Exception("buffer_string is empty, OnPaint never called?")
+Exception: buffer_string is empty, OnPaint never called?
+

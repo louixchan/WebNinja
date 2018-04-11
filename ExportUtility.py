@@ -32,4 +32,4 @@ def save_screenshot(browser, name=''):
 
     draw.text((x, y), text, font=font)
 
-    image.save('C:/Users/lchan1/Desktop/wax/imdb/cache/' + name + '.png', "PNG")
+    image.save(name + '.png', "PNG")
